@@ -1,0 +1,186 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 823950646,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enter \"http://qaerp.franciscanecare.net\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "http://qaerp.franciscanecare.net",
+                  "offset": 12
+                }
+              ],
+              "location": "MyStepDef.user_enter(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 153947661,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user enter username \"admin\" and password \"Admin#franciscan\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "admin",
+                  "offset": 21
+                },
+                {
+                  "val": "Admin#franciscan",
+                  "offset": 42
+                }
+              ],
+              "location": "MyStepDef.user_enter_username_and_password(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 90905,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "passes school name \"qaerp\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "qaerp",
+                  "offset": 20
+                }
+              ],
+              "location": "MyStepDef.passes_school_name(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2630902314,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "click signin",
+            "match": {
+              "location": "MyStepDef.click_signin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 480288527,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "time table home page is opened",
+            "match": {
+              "location": "MyStepDef.time_table_home_page_is_opened()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3994042191,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyStepDef.launchBrowser(Scenario)"
+            }
+          }
+        ],
+        "line": 103,
+        "name": "To open teachers time table page",
+        "description": "",
+        "id": "time-table-reports;to-open-teachers-time-table-page;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 2709924150,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyStepDef.closeBrowser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1311556749,
+              "status": "passed"
+            },
+            "line": 97,
+            "name": "user opens teachers time table page",
+            "match": {
+              "location": "MyStepDef.user_opens_teachers_time_table_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 100623258,
+              "status": "passed"
+            },
+            "line": 98,
+            "name": "select teachers \"ABHINAV\" on class time table page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ABHINAV",
+                  "offset": 17
+                }
+              ],
+              "location": "MyStepDef.select_teachers_on_class_time_table_page(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5886996920,
+              "status": "passed"
+            },
+            "line": 99,
+            "name": "click show to open teachers time table report",
+            "match": {
+              "location": "MyStepDef.click_show_to_open_teachers_time_table_report()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 95,
+            "name": "@scenario12"
+          }
+        ]
+      }
+    ],
+    "name": "Time Table reports",
+    "description": "   As a user I would like to open all time table reports\r\n   So that I can verify that there is no problem in report loading",
+    "id": "time-table-reports",
+    "keyword": "Feature",
+    "uri": "feature/Reports.feature"
+  }
+]

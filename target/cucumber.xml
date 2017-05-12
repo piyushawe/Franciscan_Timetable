@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="18.092323">
+<testcase classname="Time Table reports" name="To open teachers time table page" time="18.092323">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter username "admin" and password "Admin#franciscan"............passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then time table home page is opened.........................................passed
+When user opens teachers time table page....................................passed
+And select teachers "ABHINAV" on class time table page......................passed
+Then click show to open teachers time table report..........................passed
+]]></system-out>
+</testcase>
+</testsuite>
