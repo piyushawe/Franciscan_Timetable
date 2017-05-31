@@ -1,71 +1,13 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("feature/Reports.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("feature/PageVerify.feature");
 formatter.feature({
   "line": 1,
-  "name": "Time Table reports",
-  "description": "   As a user I would like to open all time table reports\r\n   So that I can verify that there is no problem in report loading",
-  "id": "time-table-reports",
+  "name": "Franciscan TimeTable",
+  "description": "    As a user I would like to verify that \r\n    The page is loaded successfully",
+  "id": "franciscan-timetable",
   "keyword": "Feature"
 });
-formatter.scenarioOutline({
-  "comments": [
-    {
-      "line": 94,
-      "value": "#teachers time table"
-    }
-  ],
-  "line": 96,
-  "name": "To open teachers time table page",
-  "description": "",
-  "id": "time-table-reports;to-open-teachers-time-table-page",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 95,
-      "name": "@scenario12"
-    }
-  ]
-});
-formatter.step({
-  "line": 97,
-  "name": "user opens teachers time table page",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 98,
-  "name": "select teachers \"\u003cteacher\u003e\" on class time table page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 99,
-  "name": "click show to open teachers time table report",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 101,
-  "name": "",
-  "description": "",
-  "id": "time-table-reports;to-open-teachers-time-table-page;",
-  "rows": [
-    {
-      "cells": [
-        "teacher"
-      ],
-      "line": 102,
-      "id": "time-table-reports;to-open-teachers-time-table-page;;1"
-    },
-    {
-      "cells": [
-        "ABHINAV"
-      ],
-      "line": 103,
-      "id": "time-table-reports;to-open-teachers-time-table-page;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
 formatter.before({
-  "duration": 3994042191,
+  "duration": 3955106584,
   "status": "passed"
 });
 formatter.background({
@@ -110,7 +52,7 @@ formatter.match({
   "location": "MyStepDef.user_enter(String)"
 });
 formatter.result({
-  "duration": 823950646,
+  "duration": 962685394,
   "status": "passed"
 });
 formatter.match({
@@ -127,7 +69,7 @@ formatter.match({
   "location": "MyStepDef.user_enter_username_and_password(String,String)"
 });
 formatter.result({
-  "duration": 153947661,
+  "duration": 163919586,
   "status": "passed"
 });
 formatter.match({
@@ -140,84 +82,69 @@ formatter.match({
   "location": "MyStepDef.passes_school_name(String)"
 });
 formatter.result({
-  "duration": 90905,
+  "duration": 72430,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepDef.click_signin()"
 });
 formatter.result({
-  "duration": 2630902314,
+  "duration": 2695693993,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepDef.time_table_home_page_is_opened()"
 });
 formatter.result({
-  "duration": 480288527,
+  "duration": 392397027,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 103,
-  "name": "To open teachers time table page",
+  "comments": [
+    {
+      "line": 168,
+      "value": "#substitution"
+    }
+  ],
+  "line": 170,
+  "name": "To verify substitution page",
   "description": "",
-  "id": "time-table-reports;to-open-teachers-time-table-page;;2",
+  "id": "franciscan-timetable;to-verify-substitution-page",
   "type": "scenario",
-  "keyword": "Scenario Outline",
+  "keyword": "Scenario",
   "tags": [
     {
-      "line": 95,
-      "name": "@scenario12"
+      "line": 169,
+      "name": "@scenario27"
     }
   ]
 });
 formatter.step({
-  "line": 97,
-  "name": "user opens teachers time table page",
+  "line": 171,
+  "name": "user open substitution page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 98,
-  "name": "select teachers \"ABHINAV\" on class time table page",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 99,
-  "name": "click show to open teachers time table report",
+  "line": 172,
+  "name": "verify substitution page",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "MyStepDef.user_opens_teachers_time_table_page()"
+  "location": "MyStepDef.user_open_substitution_page()"
 });
 formatter.result({
-  "duration": 1311556749,
+  "duration": 583046691,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "ABHINAV",
-      "offset": 17
-    }
-  ],
-  "location": "MyStepDef.select_teachers_on_class_time_table_page(String)"
+  "location": "MyStepDef.verify_substitution_page()"
 });
 formatter.result({
-  "duration": 100623258,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStepDef.click_show_to_open_teachers_time_table_report()"
-});
-formatter.result({
-  "duration": 5886996920,
+  "duration": 1276199165,
   "status": "passed"
 });
 formatter.after({
-  "duration": 2709924150,
+  "duration": 3195745017,
   "status": "passed"
 });
 });

@@ -6,12 +6,26 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import constraintsMasterPageObject.ConsecutiveAllocation;
+import constraintsMasterPageObject.DefineBuilding;
+import constraintsMasterPageObject.DistanceBuildingToFloor;
+import constraintsMasterPageObject.DistanceBuildingWise;
+import constraintsMasterPageObject.FixedAllocation;
+import constraintsMasterPageObject.ParallelAllocation;
+import constraintsMasterPageObject.PreferenceAllocation;
+import createTimeTablePageObject.AssignOneTeacherTimeTableToAnother;
+import createTimeTablePageObject.AutoGenerateTimeTable;
+import createTimeTablePageObject.CreatePredefinedTimeTable;
+import createTimeTablePageObject.ModifyTimeTable;
+import createTimeTablePageObject.ReplaceTeacher;
+import createTimeTablePageObject.ViewAndModifyTimeTable;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import masterSettingsPageObject.ChangeAcademic;
 import pageObjects.AssignmentStatus;
 import pageObjects.ClassAndResourceInformation;
 import pageObjects.ClassAndSubjectTaught;
@@ -33,6 +47,19 @@ import pageObjects.TeachersTimeTable;
 import pageObjects.TeachersWingWise;
 import pageObjects.TeachersWorkLoad;
 import pageObjects.UnallocatedPeriods;
+import relationMasterPageObject.AssignSubjectToClass;
+import relationMasterPageObject.ClassSetting;
+import relationMasterPageObject.ClassTeacherSubject;
+import relationMasterPageObject.DefineClassTeacher;
+import relationMasterPageObject.DefineResources;
+import relationMasterPageObject.DefineSubject;
+import relationMasterPageObject.ImportExportSubjects;
+import relationMasterPageObject.PeriodAllotment;
+import relationMasterPageObject.RelateResourceToSubject;
+import relationMasterPageObject.TeacherSetting;
+import relationMasterPageObject.TimeTableGlobalSetting;
+import substitutionMasterPageObject.MarkAttendance;
+import substitutionMasterPageObject.Substitution;
 
 public class MyStepDef {
 	WebDriver dr;
@@ -426,4 +453,356 @@ public class MyStepDef {
 	  AssignmentStatus a= new AssignmentStatus(dr);
 	  a.clickShow(schoolname, scenario);
   }
+  
+//change academic
+  @When("^user open change academic page$")
+  public void user_open_change_academic_page() throws Throwable {
+	  ChangeAcademic ca= new ChangeAcademic(dr);
+	  ca.openChangeAcademic();
+  }
+
+  @Then("^verify change academic page$")
+  public void verify_change_academic_page() throws Throwable {
+	  ChangeAcademic ca= new ChangeAcademic(dr);
+	  ca.verifyPage(schoolname, scenario);
+  }
+  
+//define subject
+  @When("^user open define subject page$")
+  public void user_open_define_subject_page() throws Throwable {
+	  DefineSubject ds= new DefineSubject(dr);
+	  ds.openDefineSubject();
+  }
+
+  @Then("^verify define subject page$")
+  public void verify_define_subject_page() throws Throwable {
+	  DefineSubject ds= new DefineSubject(dr);
+	  ds.verifyPage(schoolname, scenario);
+  }
+  
+//define resources
+  @When("^user open define resources page$")
+  public void user_open_define_resources_page() throws Throwable {
+	  DefineResources drc= new DefineResources(dr);
+	  drc.openDefineResources();
+  }
+
+  @Then("^verify define resources page$")
+  public void verify_define_resources_page() throws Throwable {
+	  DefineResources drc= new DefineResources(dr);
+	  drc.verifyPage(schoolname, scenario);
+  }
+  
+//class setting
+  @When("^user open class setting page$")
+  public void user_open_class_setting_page() throws Throwable {
+	  ClassSetting cs= new ClassSetting(dr);
+	  cs.openClassSetting();
+  }
+
+  @Then("^verify class setting page$")
+  public void verify_class_setting_page() throws Throwable {
+	  ClassSetting cs= new ClassSetting(dr);
+	  cs.verifyPage(schoolname, scenario);
+  }
+  
+//define class teacher
+  @When("^user open define class teacher page$")
+  public void user_open_define_class_teacher_page() throws Throwable {
+	  DefineClassTeacher dct= new DefineClassTeacher(dr);
+	  dct.openDefineClassTeacher();
+  }
+
+  @Then("^verify define class teacher page$")
+  public void verify_define_class_teacher_page() throws Throwable {
+	  DefineClassTeacher dct= new DefineClassTeacher(dr);
+	  dct.verifyPage(schoolname, scenario);
+  }
+  
+//assign subject to class
+  @When("^user open assign subject to class page$")
+  public void user_open_assign_subject_to_class_page() throws Throwable {
+	  AssignSubjectToClass asc= new AssignSubjectToClass(dr);
+	  asc.openAssignSubjectToClass();
+  }
+
+  @Then("^verify assign subject to class page$")
+  public void verify_assign_subject_to_class_page() throws Throwable {
+	  AssignSubjectToClass asc= new AssignSubjectToClass(dr);
+	  asc.verifyPage(schoolname, scenario);
+  }
+  
+//relate resource to subject
+  @When("^user open relate resource to subject page$")
+  public void user_open_relate_resource_to_subject_page() throws Throwable {
+	  RelateResourceToSubject rrs= new RelateResourceToSubject(dr);
+	  rrs.openRelateResourceToSubject();
+  }
+
+  @Then("^verify relate resource to subject page$")
+  public void verify_relate_resource_to_subject_page() throws Throwable {
+	  RelateResourceToSubject rrs= new RelateResourceToSubject(dr);
+	  rrs.verifyPage(schoolname, scenario);
+  }
+  
+//period allotment
+  @When("^user open period allotment page$")
+  public void user_open_period_allotment_page() throws Throwable {
+	  PeriodAllotment pa= new PeriodAllotment(dr);
+	  pa.openPeriodAllotment();
+  }
+
+  @Then("^verify period allotment page$")
+  public void verify_period_allotment_page() throws Throwable {
+	  PeriodAllotment pa= new PeriodAllotment(dr);
+	  pa.verifyPage(schoolname, scenario);
+  }
+  
+//class teacher subject
+  @When("^user open class teacher subject page$")
+  public void user_open_class_teacher_subject_page() throws Throwable {
+	  ClassTeacherSubject cts= new ClassTeacherSubject(dr);
+	  cts.openClassTeacherSubject();
+  }
+
+  @Then("^verify class teacher subject page$")
+  public void verify_class_teacher_subject_page() throws Throwable {
+	  ClassTeacherSubject cts= new ClassTeacherSubject(dr);
+	  cts.verifyPage(schoolname, scenario);
+  }
+
+//time table global setting
+  @When("^user open time table global setting page$")
+  public void user_open_time_table_global_setting_page() throws Throwable {
+	  TimeTableGlobalSetting ttgs= new TimeTableGlobalSetting(dr);
+	  ttgs.openTimeTableGlobalSetting();
+  }
+
+  @Then("^verify time table global setting page$")
+  public void verify_time_table_global_setting_page() throws Throwable {
+	  TimeTableGlobalSetting ttgs= new TimeTableGlobalSetting(dr);
+	  ttgs.verifyPage(schoolname, scenario);
+  }
+  
+//teacher setting
+  @When("^user open teacher setting page$")
+  public void user_open_teacher_setting_page() throws Throwable {
+	  TeacherSetting ts= new TeacherSetting(dr);
+	  ts.openTeacherSetting();
+  }
+
+  @Then("^verify teacher setting page$")
+  public void verify_teacher_setting_page() throws Throwable {
+	  TeacherSetting ts= new TeacherSetting(dr);
+	  ts.verifyPage(schoolname, scenario);
+  }
+  
+//import export subjects
+  @When("^user open import export subjects page$")
+  public void user_open_import_export_subjects_page() throws Throwable {
+	  ImportExportSubjects ies= new ImportExportSubjects(dr);
+	  ies.openImportExportSubjects();
+  }
+
+  @Then("^verify import export subjects page$")
+  public void verify_import_export_subjects_page() throws Throwable {
+	  ImportExportSubjects ies= new ImportExportSubjects(dr);
+	  ies.verifyPage(schoolname, scenario);
+  }
+  
+//fixed allocation
+  @When("^user open fixed allocation page$")
+  public void user_open_fixed_allocation_page() throws Throwable {
+	  FixedAllocation fa= new FixedAllocation(dr);
+	  fa.openFixedAllocation();
+  }
+
+  @Then("^verify fixed allocation page$")
+  public void verify_fixed_allocation_page() throws Throwable {
+	  FixedAllocation fa= new FixedAllocation(dr);
+	  fa.verifyPage(schoolname, scenario);
+  }
+
+//parallel allocation
+  @When("^user open parallel allocation page$")
+  public void user_open_parallel_allocation_page() throws Throwable {
+	  ParallelAllocation pa= new ParallelAllocation(dr);
+	  pa.openParallelAllocation();
+  }
+
+  @Then("^verify parallel allocation page$")
+  public void verify_parallel_allocation_page() throws Throwable {
+	  ParallelAllocation pa= new ParallelAllocation(dr);
+	  pa.verifyPage(schoolname, scenario);
+  }
+
+//consecutive allocation
+  @When("^user open consecutive allocation page$")
+  public void user_open_consecutive_allocation_page() throws Throwable {
+	  ConsecutiveAllocation ca= new ConsecutiveAllocation(dr);
+	  ca.openConsecutiveAllocation();
+  }
+
+  @Then("^verify consecutive allocation page$")
+  public void verify_consecutive_allocation_page() throws Throwable {
+	  ConsecutiveAllocation ca= new ConsecutiveAllocation(dr);
+	  ca.verifyPage(schoolname, scenario);
+  }
+
+//preference allocation
+  @When("^user open preference allocation page$")
+  public void user_open_preference_allocation_page() throws Throwable {
+	  PreferenceAllocation pa= new PreferenceAllocation(dr);
+	  pa.openPreferenceAllocation();
+  }
+
+  @Then("^verify preference allocation page$")
+  public void verify_preference_allocation_page() throws Throwable {
+	  PreferenceAllocation pa= new PreferenceAllocation(dr);
+	  pa.verifyPage(schoolname, scenario);
+  }
+
+//define building
+  @When("^user open define building page$")
+  public void user_open_define_building_page() throws Throwable {
+	  DefineBuilding db= new DefineBuilding(dr);
+	  db.openDefineBuilding();
+  }
+
+  @Then("^verify define building page$")
+  public void verify_define_building_page() throws Throwable {
+	  DefineBuilding db= new DefineBuilding(dr);
+	  db.verifyPage(schoolname, scenario);
+  }
+  
+//distance building to floor
+  @When("^user open distance building to floor page$")
+  public void user_open_distance_building_to_floor_page() throws Throwable {
+	  DistanceBuildingToFloor dbf= new DistanceBuildingToFloor(dr);
+	  dbf.openDistanceBuildingToFloor();
+  }
+
+  @Then("^verify distance building to floor page$")
+  public void verify_distance_building_to_floor_page() throws Throwable {
+	  DistanceBuildingToFloor dbf= new DistanceBuildingToFloor(dr);
+	  dbf.verifyPage(schoolname, scenario);
+  }
+
+//distance building wise
+  @When("^user open distance building wise floor page$")
+  public void user_open_distance_building_wise_floor_page() throws Throwable {
+	  DistanceBuildingWise dbw= new DistanceBuildingWise(dr);
+	  dbw.openDistanceBuildingWise();
+  }
+
+  @Then("^verify distance building wise floor page$")
+  public void verify_distance_building_wise_floor_page() throws Throwable {
+	  DistanceBuildingWise dbw= new DistanceBuildingWise(dr);
+	  dbw.verifyPage(schoolname, scenario);
+  }
+  
+//create predefined time table
+  @When("^user open create predefined time table page$")
+  public void user_open_create_predefined_time_table_page() throws Throwable {
+	  CreatePredefinedTimeTable cptt= new CreatePredefinedTimeTable(dr);
+	  cptt.openCreatePredefinedTimeTable();
+  }
+
+  @Then("^verify create predefined time table page$")
+  public void verify_create_predefined_time_table_page() throws Throwable {
+	  CreatePredefinedTimeTable cptt= new CreatePredefinedTimeTable(dr);
+	  cptt.verifyPage(schoolname, scenario);
+  }
+
+//view and modify time table
+  @When("^user open view and modify time table page$")
+  public void user_open_view_and_modify_time_table_page() throws Throwable {
+	  ViewAndModifyTimeTable vmtt= new ViewAndModifyTimeTable(dr);
+	  vmtt.openViewAndModifyTimeTable();
+  }
+
+  @Then("^verify view and modify time table page$")
+  public void verify_view_and_modify_time_table_page() throws Throwable {
+	  ViewAndModifyTimeTable vmtt= new ViewAndModifyTimeTable(dr);
+	  vmtt.verifyPage(schoolname, scenario);
+  }
+  
+//replace teacher
+  @When("^user open replace teacher page$")
+  public void user_open_replace_teacher_page() throws Throwable {
+	  ReplaceTeacher rt= new ReplaceTeacher(dr);
+	  rt.openReplaceTeacher();
+  }
+
+  @Then("^verify replace teacher page$")
+  public void verify_replace_teacher_page() throws Throwable {
+	  ReplaceTeacher rt= new ReplaceTeacher(dr);
+	  rt.verifyPage(schoolname, scenario);
+  }
+
+//assign one teacher time table to another
+  @When("^user open assign one teacher time table to another page$")
+  public void user_open_assign_one_teacher_time_table_to_another_page() throws Throwable {
+	  AssignOneTeacherTimeTableToAnother atta= new AssignOneTeacherTimeTableToAnother(dr);
+	  atta.openAssignOneTeacherTimeTableToAnother();
+  }
+
+  @Then("^verify assign one teacher time table to another page$")
+  public void verify_assign_one_teacher_time_table_to_another_page() throws Throwable {
+	  AssignOneTeacherTimeTableToAnother atta= new AssignOneTeacherTimeTableToAnother(dr);
+	  atta.verifyPage(schoolname, scenario);
+  }
+  
+//auto generate time table
+  @When("^user open auto generate time table page$")
+  public void user_open_auto_generate_time_table_page() throws Throwable {
+	  AutoGenerateTimeTable agtt= new AutoGenerateTimeTable(dr);
+	  agtt.openAutoGenerateTimeTable();
+  }
+
+  @Then("^verify auto generate time table page$")
+  public void verify_auto_generate_time_table_page() throws Throwable {
+	  AutoGenerateTimeTable agtt= new AutoGenerateTimeTable(dr);
+	  agtt.verifyPage(schoolname, scenario);
+  }
+
+//modify time table
+  @When("^user open modify time table page$")
+  public void user_open_modify_time_table_page() throws Throwable {
+	  ModifyTimeTable mtt= new ModifyTimeTable(dr);
+	  mtt.openModifyTimeTable();
+  }
+
+  @Then("^verify modify time table page$")
+  public void verify_modify_time_table_page() throws Throwable {
+	  ModifyTimeTable mtt= new ModifyTimeTable(dr);
+	  mtt.verifyPage(schoolname, scenario);
+  }
+  
+//mark attendance
+  @When("^user open mark attendance page$")
+  public void user_open_mark_attendance_page() throws Throwable {
+	  MarkAttendance ma= new MarkAttendance(dr);
+	  ma.openMarkAttendance();
+  }
+
+  @Then("^verify mark attendance page$")
+  public void verify_mark_attendance_page() throws Throwable {
+	  MarkAttendance ma= new MarkAttendance(dr);
+	  ma.verifyPage(schoolname, scenario);
+  }
+
+//substitution  
+  @When("^user open substitution page$")
+  public void user_open_substitution_page() throws Throwable {
+	  Substitution sb= new Substitution(dr);
+	  sb.openSubstitution();
+  }
+
+  @Then("^verify substitution page$")
+  public void verify_substitution_page() throws Throwable {
+	  Substitution sb= new Substitution(dr);
+	  sb.verifyPage(schoolname, scenario);
+  }
+  
 }
