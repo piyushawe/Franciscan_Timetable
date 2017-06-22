@@ -1,13 +1,13 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("feature/PageVerify.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("feature/VerifySaveView.feature");
 formatter.feature({
   "line": 1,
-  "name": "Franciscan TimeTable",
-  "description": "    As a user I would like to verify that \r\n    The page is loaded successfully",
-  "id": "franciscan-timetable",
+  "name": "Franciscan Time Table",
+  "description": "As a user I would like to verify that\r\nThere are no errors on clicking save or view buttons of time table",
+  "id": "franciscan-time-table",
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 3955106584,
+  "duration": 5589321396,
   "status": "passed"
 });
 formatter.background({
@@ -52,7 +52,7 @@ formatter.match({
   "location": "MyStepDef.user_enter(String)"
 });
 formatter.result({
-  "duration": 962685394,
+  "duration": 24628978348,
   "status": "passed"
 });
 formatter.match({
@@ -69,7 +69,7 @@ formatter.match({
   "location": "MyStepDef.user_enter_username_and_password(String,String)"
 });
 formatter.result({
-  "duration": 163919586,
+  "duration": 165004666,
   "status": "passed"
 });
 formatter.match({
@@ -82,69 +82,63 @@ formatter.match({
   "location": "MyStepDef.passes_school_name(String)"
 });
 formatter.result({
-  "duration": 72430,
+  "duration": 55130,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepDef.click_signin()"
 });
 formatter.result({
-  "duration": 2695693993,
+  "duration": 4438430788,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepDef.time_table_home_page_is_opened()"
 });
 formatter.result({
-  "duration": 392397027,
+  "duration": 692033714,
   "status": "passed"
 });
 formatter.scenario({
-  "comments": [
-    {
-      "line": 168,
-      "value": "#substitution"
-    }
-  ],
-  "line": 170,
-  "name": "To verify substitution page",
+  "line": 75,
+  "name": "To verify view button on distance building wise",
   "description": "",
-  "id": "franciscan-timetable;to-verify-substitution-page",
+  "id": "franciscan-time-table;to-verify-view-button-on-distance-building-wise",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 169,
-      "name": "@scenario27"
+      "line": 74,
+      "name": "@scenario10"
     }
   ]
 });
 formatter.step({
-  "line": 171,
-  "name": "user open substitution page",
+  "line": 76,
+  "name": "user open distance building wise page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 172,
-  "name": "verify substitution page",
+  "line": 77,
+  "name": "click view on distance building wise page",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "MyStepDef.user_open_substitution_page()"
+  "location": "MyStepDef.user_open_distance_building_wise_page()"
 });
 formatter.result({
-  "duration": 583046691,
+  "duration": 1248116943,
   "status": "passed"
 });
 formatter.match({
-  "location": "MyStepDef.verify_substitution_page()"
+  "location": "MyStepDef.click_view_on_distance_building_wise_page()"
 });
 formatter.result({
-  "duration": 1276199165,
+  "duration": 1027409091,
   "status": "passed"
 });
 formatter.after({
-  "duration": 3195745017,
+  "duration": 2844516042,
   "status": "passed"
 });
 });

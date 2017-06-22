@@ -479,7 +479,37 @@ public class MyStepDef {
 	  DefineSubject ds= new DefineSubject(dr);
 	  ds.verifyPage(schoolname, scenario);
   }
-  
+
+  @When("^enter subject name \"([^\"]*)\" on define subject page$")
+  public void enter_subject_name_on_define_subject_page(String arg1) throws Throwable {
+      DefineSubject ds= new DefineSubject(dr);
+      ds.enterSubjectName(arg1);
+  }
+
+  @When("^enter abbreviation as \"([^\"]*)\" on define subject page$")
+  public void enter_abbreviation_as_on_define_subject_page(String arg1) throws Throwable {
+      DefineSubject ds= new DefineSubject(dr);
+      ds.enterAbbreviation(arg1);
+  }
+
+  @When("^select subject type on define subject page$")
+  public void select_subject_type_on_define_subject_page() throws Throwable {
+      DefineSubject ds= new DefineSubject(dr);
+      ds.selectSubjectType();
+  }
+
+  @Then("^click save on define subject page$")
+  public void click_save_on_define_subject_page() throws Throwable {
+      DefineSubject ds= new DefineSubject(dr);
+      ds.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define subject page$")
+  public void click_view_on_define_subject_page() throws Throwable {
+      DefineSubject ds= new DefineSubject(dr);
+      ds.clickView(schoolname, scenario);
+  }
+
 //define resources
   @When("^user open define resources page$")
   public void user_open_define_resources_page() throws Throwable {
@@ -492,7 +522,25 @@ public class MyStepDef {
 	  DefineResources drc= new DefineResources(dr);
 	  drc.verifyPage(schoolname, scenario);
   }
-  
+
+  @When("^enter resource name \"([^\"]*)\" on define resources page$")
+  public void enter_resource_name_on_define_resources_page(String arg1) throws Throwable {
+      DefineResources drc= new DefineResources(dr);
+      drc.enterResourceName(arg1);
+  }
+
+  @Then("^click save on define resources page$")
+  public void click_save_on_define_resources_page() throws Throwable {
+      DefineResources drc= new DefineResources(dr);
+      drc.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define resources page$")
+  public void click_view_on_define_resources_page() throws Throwable {
+      DefineResources drc= new DefineResources(dr);
+      drc.clickView(schoolname, scenario);
+  }
+
 //class setting
   @When("^user open class setting page$")
   public void user_open_class_setting_page() throws Throwable {
@@ -674,7 +722,31 @@ public class MyStepDef {
 	  DefineBuilding db= new DefineBuilding(dr);
 	  db.verifyPage(schoolname, scenario);
   }
-  
+
+  @When("^enter building name \"([^\"]*)\" on define building page$")
+  public void enter_building_name_on_define_building_page(String arg1) throws Throwable {
+      DefineBuilding db= new DefineBuilding(dr);
+      db.enterBuildingName(arg1);
+  }
+
+  @When("^enter floor no \"([^\"]*)\" on define building name$")
+  public void enter_floor_no_on_define_building_name(String arg1) throws Throwable {
+      DefineBuilding db= new DefineBuilding(dr);
+      db.enterNoOfFloor(arg1);
+  }
+
+  @Then("^click save on define building page$")
+  public void click_save_on_define_building_page() throws Throwable {
+      DefineBuilding db= new DefineBuilding(dr);
+      db.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on define building page$")
+  public void click_view_on_define_building_page() throws Throwable {
+      DefineBuilding db= new DefineBuilding(dr);
+      db.clickView(schoolname, scenario);
+  }
+
 //distance building to floor
   @When("^user open distance building to floor page$")
   public void user_open_distance_building_to_floor_page() throws Throwable {
@@ -688,19 +760,79 @@ public class MyStepDef {
 	  dbf.verifyPage(schoolname, scenario);
   }
 
+  @When("^select building on distance building to floor page$")
+  public void select_building_on_distance_building_to_floor_page() throws Throwable {
+      DistanceBuildingToFloor dbf= new DistanceBuildingToFloor(dr);
+      dbf.selectBuilding();
+  }
+
+  @When("^select floor on distance building to floor page$")
+  public void select_floor_on_distance_building_to_floor_page() throws Throwable {
+      DistanceBuildingToFloor dbf= new DistanceBuildingToFloor(dr);
+      dbf.selectFloor();
+  }
+
+  @When("^enter distance \"([^\"]*)\" on distance building to floor page$")
+  public void enter_distance_on_distance_building_to_floor_page(String arg1) throws Throwable {
+      DistanceBuildingToFloor dbf= new DistanceBuildingToFloor(dr);
+      dbf.enterDistance(arg1);
+  }
+
+  @Then("^click save on distance building to floor page$")
+  public void click_save_on_distance_building_to_floor_page() throws Throwable {
+      DistanceBuildingToFloor dbf= new DistanceBuildingToFloor(dr);
+      dbf.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on distance building to floor page$")
+  public void click_view_on_distance_building_to_floor_page() throws Throwable {
+      DistanceBuildingToFloor dbf= new DistanceBuildingToFloor(dr);
+      dbf.clickView(schoolname, scenario);
+  }
+
 //distance building wise
-  @When("^user open distance building wise floor page$")
-  public void user_open_distance_building_wise_floor_page() throws Throwable {
+  @When("^user open distance building wise page$")
+  public void user_open_distance_building_wise_page() throws Throwable {
 	  DistanceBuildingWise dbw= new DistanceBuildingWise(dr);
 	  dbw.openDistanceBuildingWise();
   }
 
-  @Then("^verify distance building wise floor page$")
-  public void verify_distance_building_wise_floor_page() throws Throwable {
+  @Then("^verify distance building wise page$")
+  public void verify_distance_building_wise_page() throws Throwable {
 	  DistanceBuildingWise dbw= new DistanceBuildingWise(dr);
 	  dbw.verifyPage(schoolname, scenario);
   }
-  
+
+  @When("^select building from on distance building wise page$")
+  public void select_building_from_on_distance_building_wise_page() throws Throwable {
+      DistanceBuildingWise dbw= new DistanceBuildingWise(dr);
+      dbw.selectBuildingFrom();
+  }
+
+  @When("^select building to on distance building wise page$")
+  public void select_building_to_on_distance_building_wise_page() throws Throwable {
+      DistanceBuildingWise dbw= new DistanceBuildingWise(dr);
+      dbw.selectBuildingTo();
+  }
+
+  @When("^enter distance \"([^\"]*)\" on distance building wise page$")
+  public void enter_distance_on_distance_building_wise_page(String arg1) throws Throwable {
+      DistanceBuildingWise dbw= new DistanceBuildingWise(dr);
+      dbw.enterDistance(arg1);
+  }
+
+  @Then("^click save on distance building wise page$")
+  public void click_save_on_distance_building_wise_page() throws Throwable {
+      DistanceBuildingWise dbw= new DistanceBuildingWise(dr);
+      dbw.clickSave(schoolname, scenario);
+  }
+
+  @Then("^click view on distance building wise page$")
+  public void click_view_on_distance_building_wise_page() throws Throwable {
+      DistanceBuildingWise dbw= new DistanceBuildingWise(dr);
+      dbw.clickView(schoolname, scenario);
+  }
+
 //create predefined time table
   @When("^user open create predefined time table page$")
   public void user_open_create_predefined_time_table_page() throws Throwable {

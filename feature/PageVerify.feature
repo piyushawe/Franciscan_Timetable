@@ -119,9 +119,9 @@ Feature: Franciscan TimeTable
 
   #distance building wise
   @scenario19
-  Scenario: To verify distance building wise floor page
-    When user open distance building wise floor page
-    Then verify distance building wise floor page
+  Scenario: To verify distance building wise page
+    When user open distance building wise page
+    Then verify distance building wise page
 
   #create predefined time table
   @scenario20
