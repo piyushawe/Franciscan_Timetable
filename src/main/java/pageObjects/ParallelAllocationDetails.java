@@ -33,6 +33,7 @@ public class ParallelAllocationDetails {
   {
 	  String r="ParallelAllocationDetails";
 	  show.click();
+      u.verifyShow(dr, str, r, sc);
 	  Thread.sleep(5000);
 	  u.captureScreenshot(dr, str, r,sc);
   }

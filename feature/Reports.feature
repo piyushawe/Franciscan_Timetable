@@ -3,9 +3,9 @@ Feature: Time Table reports
      So that I can verify that there is no problem in report loading
 
   Background: 
-    Given user enter "http://erp.stkarenssecondaryschool.com"
-    When user enter username "admin" and password "stkss#54321techpass"
-    And passes school name "st karen"
+    Given user enter "http://qaerp.erptraining.franciscanecare.net/Secure/"
+    When user enter username "admin" and password "fspl@12345"
+    And passes school name "erptraining"
     And click signin
     Then time table home page is opened
 
@@ -67,7 +67,7 @@ Feature: Time Table reports
 
     Examples: 
       | teacher |
-      | ABHINAV |
+      | ASHISH  |
 
   #teachers wing wise
   @scenario10
@@ -89,7 +89,7 @@ Feature: Time Table reports
 
     Examples: 
       | class |
-      | 1-A   |
+      | I-A   |
 
   #teachers time table
   @scenario12
@@ -100,7 +100,7 @@ Feature: Time Table reports
 
     Examples: 
       | teacher |
-      | ABHINAV |
+      | ASHISH  |
 
   #consecutive allocation report
   @scenario13
@@ -117,7 +117,7 @@ Feature: Time Table reports
 
     Examples: 
       | class |
-      |     1 |
+      |     I |
 
   #free teachers per week
   @scenario15
@@ -146,7 +146,7 @@ Feature: Time Table reports
 
     Examples: 
       | class |
-      | 1-A   |
+      | I-A   |
 
   #teachers work load
   @scenario19
@@ -174,7 +174,7 @@ Feature: Time Table reports
 
     Examples: 
       | class |
-      |     1 |
+      |     I |
 
   #subject in class with teacher allocated
   @scenario22
@@ -185,7 +185,7 @@ Feature: Time Table reports
 
     Examples: 
       | class |
-      |     1 |
+      |     I |
 
   #substitution date wise
   @scenario23

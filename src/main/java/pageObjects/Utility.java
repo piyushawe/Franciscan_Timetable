@@ -26,7 +26,8 @@ public class Utility {
 	{
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 		File f= ((TakesScreenshot)dr).getScreenshotAs(OutputType.FILE);
-	    FileUtils.copyFile(f,new File("D:/timetable_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
+	    //FileUtils.copyFile(f,new File("D:/timetable_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
+		FileUtils.copyFile(f,new File("E:/timetable_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
 	}
 	
 	void selectDate(WebDriver dr,WebElement date,String mm, String yy,String dd ) throws InterruptedException
@@ -45,6 +46,29 @@ public class Utility {
 	  			break; 
 	    } 
 	    }Thread.sleep(1000);
+	}
+	public void verifyShow(WebDriver dr,String school, String page,Collection<String> sc)throws IOException
+	{
+		ArrayList<String>list= new ArrayList<String>();
+		Date date= new Date();
+		int size= sc.toString().length();
+		String scenario= sc.toString().substring(2,size-1);
+		String msg;
+
+		dr.switchTo().defaultContent();
+		try {
+			dr.findElement(By.id("defaultSpeechbubbleHeader"));
+			msg = dr.findElement(By.id("defaultSpeechbubbleHeader")).getText();
+			list.add(date.toString());
+			list.add(scenario);
+			list.add(page);
+			list.add("Show:"+msg);
+			prepareErrorLog(list,school);
+		}
+		catch(Exception e)
+		{
+			System.out.println("");
+		}
 	}
 	public void verifySave(WebDriver dr,String school, String page,Collection<String> sc)throws IOException
 	{
@@ -133,7 +157,8 @@ public class Utility {
 	public void prepareErrorLog(ArrayList<String>lst, String school )throws IOException
 	{
 		ArrayList<String>list= new ArrayList<String>(Arrays.asList("Date","Scenario", "Page","Error Message"));
-		File file = new File("D:/TestReports/" + school + "/TimeTable/ErrorLog.xls");
+		//File file = new File("D:/TestReports/" + school + "/TimeTable/ErrorLog.xls");
+		File file = new File("E:/TestReports/" + school + "/TimeTable/ErrorLog.xls");
 		File pdir= file.getParentFile();
 		FileInputStream fis;
 		HSSFWorkbook wb;

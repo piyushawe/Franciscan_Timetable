@@ -39,6 +39,7 @@ public class TeachersTimeTable {
   {
 	  String r="TeachersTimeTable";
 	  show.click();
+      u.verifyShow(dr, str, r, sc);
 	  Thread.sleep(5000);
 	  u.captureScreenshot(dr, str, r,sc);
   }
