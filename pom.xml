@@ -81,7 +81,7 @@
                         <forkCount>10</forkCount>
                         <reuseForks>true</reuseForks>
                         <includes>
-                            <include>**/PageVerifyRunner.class</include>
+                            <include>**/ReportsRunner.class</include>
                         </includes>
                     </configuration>
                 </plugin>
