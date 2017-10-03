@@ -107,7 +107,7 @@ public class MyStepDef {
 
   @Then("^time table home page is opened$")
   public void time_table_home_page_is_opened() throws Throwable {
-     dr.findElement(By.xpath("//img[@src='images/big/Time-Table-Manager.png']")).click();
+     dr.findElement(By.xpath("//img[@src='images/big/Time-Table.png']")).click();
   }
   
 //master requirement
